@@ -1,0 +1,10 @@
+NODE_ENV=development
+DATABASE=mongodb://debs_obrien:Aoibheann731648@ds121336.mlab.com:21336/restaurant-guide
+MAIL_USER=123
+MAIL_PASS=123
+MAIL_HOST=mailtrap.io
+MAIL_PORT=2525
+PORT=7777
+MAP_KEY=AIzaSyCVXZ0vhPliqPIvwSUaSvZJ9XmcoJKtXaM
+SECRET=snickers
+KEY=sweetsesh

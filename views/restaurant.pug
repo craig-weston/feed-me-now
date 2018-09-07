@@ -1,0 +1,55 @@
+extends layout
+block content
+	- function starRating(place) {
+	- let rating = [];
+	- if (place.rating) {
+	- for (let i = 0; i < 5; i++) {
+	- if (place.rating < (i + 0.5)) {
+	- rating.push('✩');
+	- } else {
+	- rating.push('✭');
+	- }
+	- }
+	- return rating.join(' ');
+	- }
+	-};
+	#restaurant-info
+		.container
+			.gallery
+				.photo-gallery
+					if(place.photos)
+						each photo in place.photos
+							img.photo(src=`https://maps.googleapis.com/maps/api/place/photo?maxheight=200&photoreference=${photo.photo_reference}&key=${key}`)
+
+			.restaurant
+				.button-menu
+					button#back-to-map-button.main-button
+						a(href='/map') Back to Map
+					button#add-review-button.main-button
+						a(href=`/addReview/${place.place_id}`) Add a Review
+				h2.name.restaurant-name #{place.name}
+				p.address.restaurant-details #{place.vicinity}
+				p.telephone.restaurant-details #{place.formatted_phone_number}
+				if(place.website)
+					p.website.restaurant-details
+						a(href=place.website) Go to Website
+				#reviews
+					.review-header
+						.reviews
+							h3.review-title Reviews
+							if(reviews)
+								each review in reviews
+									.restaurant-reviews
+										h3.review-title
+											span.profile-photo(style='background-image: url(/images/avatar.png)')
+											#review-rating.rating= starRating(review)
+										p= review.review
+										p= review.name
+							if(place.reviews)
+									each review in place.reviews
+										.restaurant-reviews
+											h3.review-title
+												span.profile-photo(style='background-image: url(' + review.profile_photo_url + ')')
+												#review-rating.rating= starRating(review)
+											p= review.text
+											p= review.author_name

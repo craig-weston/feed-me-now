@@ -1,0 +1,23 @@
+extends layout
+
+block content
+	.form-wrapper
+		.button-menu
+			button#back-to-map-button.main-button
+				a(href=`/map/${restaurantID}`) Back to Restaurant
+			button#back-to-restaurant-button.main-button
+				a(href=`/map`) Back to Map
+		form.add-review(method='post' action=`/map/${restaurantID}`)
+			label(for='name') Please add Your Name
+			input.your-name(type='text', name='name', placeholder='Your Name', required='')
+			input.restaruant-id(type='hidden', name='restaurantID', required='' value=restaurantID)
+			label(for='rating') What Rating do you give this Restaurant
+			select.your-rating(name='rating', required='')
+				option(value='1') 1
+				option(value='2') 2
+				option(value='3') 3
+				option(value='4') 4
+				option(value='5') 5
+			label(for='your-review') What would you like to say about this restaurant
+			textarea.your-review(name='review', placeholder='Your Review', required='')
+			button.add-to-array.button(type='submit') Add Review

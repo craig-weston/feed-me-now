@@ -1,0 +1,12 @@
+nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
+	#navbar.navbar-nav.collapse.navbar-toggleable-sm
+		.container
+			.nav-items.clearfix
+				if !currentUser
+					a.nav-item.nav-link(href='/register') Sign Up
+
+			if currentUser
+				div
+					a.button.btn.btn-primary.pull-md-right(href='/logout') Log out
+			else
+				a.button.btn.btn-primary.pull-md-right(href='/login') Login

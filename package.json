@@ -1,0 +1,39 @@
+{
+  "name": "feed-me",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./start.js",
+    "dev": "nodemon ./start.js"
+  },
+  "engines": {
+    "node": "6.12.3",
+    "npm": "5.6.0"
+  },
+  "dependencies": {
+    "@google/maps": "^0.4.5",
+    "bcrypt": "^1.0.3",
+    "body-parser": "~1.18.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^2.0.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "dotenv": "^4.0.0",
+    "express": "~4.15.5",
+    "express-session": "^1.15.6",
+    "geolocation": "^0.2.0",
+    "google-maps": "^3.2.1",
+    "googleplaces": "^0.6.1",
+    "mongoose": "^4.13.8",
+    "mongoose-seeder": "^1.2.1",
+    "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11",
+    "serve-favicon": "~2.4.5",
+    "session": "^0.1.0",
+    "storage-native": "0.0.4",
+    "validator": "^9.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.8"
+  }
+}

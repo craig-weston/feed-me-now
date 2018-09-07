@@ -1,0 +1,20 @@
+h1.display-4.m-b-2 Sign Up
+p Welcome to foodhits. Sign up to have access to the best nearby restaurants. Don't forget to leave a review after your visit.
+	// register form
+	form(method='POST' action='/register')
+		div.form-group
+			label(for='name') Name:
+			input#name.form-control(type='text', placeholder='first name' name='name' value=name)
+		div.form-group
+			label(for='email') Email:
+			input#email.form-control(type='email', placeholder='name@email.com' name='email' value=email)
+		div.form-group
+			label(for='pw') Password:
+			input#pw.form-control(type='password' name='password')
+		div.form-group
+			label(for='pw2') Confirm Password:
+			input#pw2.form-control(type='password' name='confirmPassword')
+		button.btn.btn-primary(type='submit') Sign up
+		if(error)
+			.error
+				p.error #{error}	
